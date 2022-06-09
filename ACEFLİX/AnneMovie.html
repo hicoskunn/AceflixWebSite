@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <style>
+
+*
+{
+  margin-top: 20px;
+  padding: 0px;
+  font-family: consolas;
+}
+
+body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1d061a
+}
+
+.container
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+
+.container .box
+{
+  position: relative;
+  width: 320px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 30px;
+  transition: 0.5s;
+}
+
+.container .box::before
+{
+  content:' ';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  text-decoration: none;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+}
+
+.container .box::after
+{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 50;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+  filter: blur(30px);
+}
+
+.container .box:hover:before,
+.container .box:hover:after
+{
+  transform: skewX(0deg);
+  left: 20px;
+  width: calc(100% - 90px);
+  
+}
+
+.container .box:nth-child(1):before,
+.container .box:nth-child(1):after
+{
+  background: linear-gradient(315deg, #ffbc00, #ff0058)
+}
+
+.container .box:nth-child(2):before,
+.container .box:nth-child(2):after
+{
+  background: linear-gradient(315deg, #03a9f4, #ff0058)
+}
+
+.container .box:nth-child(3):before,
+.container .box:nth-child(3):after
+{
+    background: linear-gradient(315deg, #03a9f4, #ff0058)
+}
+
+
+.container .box .content
+{
+  position: relative;
+  left: -10px;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1;
+  transform: 0.7s;
+  color: #fff;
+}
+
+.container .box .content h2
+{
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.container .box .content p
+{
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  line-height: 1.4em;
+}
+
+.container .box .content a
+{
+  display: inline-block;
+  font-size: 1.1em;
+  color: #111;
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.row_poster {
+    width: 300px;
+    margin: 50px;
+}
+
+#v1 {
+ 
+    width: 800px;
+    margin-top: 100px;
+    margin-right: 50px;
+    
+}
+.nav_logo {
+    width: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+.nav {
+    position: fixed;
+    top: -10px;
+    left: 10px;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    z-index: 1;
+    transition-timing-function: ease-in;
+    transition: all 0.6s;
+}
+
+.nav2 {
+    position: fixed;
+    top: 0;
+    right: 15px;
+    width: auto;
+    padding: 20px;
+    /* z-index: 1; */
+}
+
+.nav_logo2 {
+    width: 50px;
+    object-fit: cover;
+}
+
+    .nav_logo2:hover {
+        background-color: #ff0052;
+        transition: all 0.2s;
+        transform: scale(1.58);
+        border-radius: 60%;
+    }
+
+    #episode {
+      position: absolute;
+      top: 1150px;
+      left: 520px;
+    width: 120px;
+    border-radius: 10px 10px;
+}
+
+#divEpisodes1 {
+    visibility: hidden;
+    position: relative;
+    top: 5px;
+    left: 0px;
+}
+
+#divEpisodes2 {
+    visibility: hidden;
+    position: relative;
+    top: -240px;
+    left: 0px;
+}
+
+#divEpisodes3 {
+    visibility: hidden;
+    position: relative;
+    top: -570px;
+    left: 0px;
+}
+
+.divEpisodes > p {
+    width: 100%;
+    height: auto;
+    padding: 5px 0 5px 15px;
+    margin: 2px;
+    background-color: rgb(100 100 100);
+    border: 1px solid rgb(100 100 100);
+    border-radius: 10px 10px;
+    font-size: 10pt;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.ep {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin: 2px;
+    background-color: rgb(60 60 60);
+    border: 1px solid rgb(60 60 60);
+    border-radius: 10px 10px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(150 150 150);
+}
+
+    </style>
+</head>
+<body>
+
+  <div class="nav" id="nav">
+    <img src="images/logo.jpg" class="nav_logo">
+  </div>
+
+    <div class="nav2" id="nav2">
+        <a href="Anasayfa.html">
+            <img src="images/Cikis.png" class="nav_logo2">
+        </a>
+    </div>
+
+    <div class="container">
+    
+        <div class="box">
+          <span></span>
+          <div class="content">
+            <h2>ANNE</h2>
+            <p>Anne with an E is described as a coming-of-age story about an outsider who fights for acceptance, for her place in the world and for love. The drama revolves around a young orphaned girl who, after an abusive childhood spent in orphanages and the homes of strangers, 
+                is mistakenly sent to live with an elderly spinster and her aging brother.</p>
+            
+          </div>
+        </div>
+
+        <div class="box">
+            <span></span>
+            <div class="content">
+              <h2></h2>
+              <img src="images/large-movie1.jpg" alt="" class="row_poster" />
+            </div>
+          </div>
+        <div class="box">
+          <span></span>
+          <div class="content">
+            <h2>CAST</h2>
+            <p><ul>
+                <li>Amybeth McNulty as Anne Shirley-Cuthbert</li>
+                <li>Amybeth McNulty as Anne Shirley-Cuthbert</li>
+                <li>Geraldine James as Marilla Cuthbert</li>
+                <li>R.H. Thomson as Matthew Cuthbert</li>
+                <li>Dalila Bela as Diana Barry</li>
+                <li>Lucas Jade Zumann as Gilbert Blythe</li>
+                <li>Corrine Koslo as Rachel Lynde</li>
+                <li>Aymeric Jett Montaz as Jerry Baynard</li>
+                <li>Dalmar Abuzeid as Sebastian Lacroix</li>
+            </ul></p>
+            
+          </div>
+        </div>
+        <div id="video">
+            <video id="v1" controls="controls">
+                <source src="images/anne-fragman.mp4" type="video/mp4" />
+            </video>
+        </div>
+      </div>
+
+
+
+      <div id="episode">
+        <select class="ep" onchange="season(value);">
+            <option value="Season" disabled selected>Season</option>
+            <option value="1.season">1.Season</option>
+            <option value="2.season">2.Season</option>
+            <option value="3.season">3.Season</option>
+        </select>
+
+
+        <div class="divEpisodes" id="divEpisodes1">
+            <p>1.Episode</p>
+            <p>2.Episode</p>
+            <p>3.Episode</p>
+            <p>4.Episode</p>
+            <p>5.Episode</p>
+            <p>6.Episode</p>
+            <p>7.Episode</p>
+        </div>
+        <br />
+        <div class="divEpisodes" id="divEpisodes2">
+            <p>1.Episode</p>
+            <p>2.Episode</p>
+            <p>3.Episode</p>
+            <p>4.Episode</p>
+            <p>5.Episode</p>
+            <p>6.Episode</p>
+            <p>7.Episode</p>
+            <p>8.Episode</p>
+            <p>9.Episode</p>
+            <p>10.Episode</p>
+        </div>
+        <br />
+        <div class="divEpisodes" id="divEpisodes3">
+            <p>1.Episode</p>
+            <p>2.Episode</p>
+            <p>3.Episode</p>
+            <p>4.Episode</p>
+            <p>5.Episode</p>
+            <p>6.Episode</p>
+            <p>7.Episode</p>
+            <p>8.Episode</p>
+            <p>9.Episode</p>
+            <p>10.Episode</p>
+            <p>11.Episode</p>
+
+        </div>
+    </div>
+
+      <script>
+         function season($value) {
+            if ($value == "1.season") {
+                document.getElementById("divEpisodes2").style.visibility = "hidden";
+                document.getElementById("divEpisodes3").style.visibility = "hidden";
+                document.getElementById("divEpisodes1").style.visibility = "visible";
+
+            }
+            else if ($value == "2.season") {
+                document.getElementById("divEpisodes3").style.visibility = "hidden";
+                document.getElementById("divEpisodes1").style.visibility = "hidden";
+                document.getElementById("divEpisodes2").style.visibility = "visible";
+
+            }
+            else {
+                document.getElementById("divEpisodes2").style.visibility = "hidden";
+                document.getElementById("divEpisodes1").style.visibility = "hidden";
+                document.getElementById("divEpisodes3").style.visibility = "visible";
+
+            }}
+      </script>
+</body>
+</html>

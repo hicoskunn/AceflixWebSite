@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>ACEFLIX</title>
+    <link rel="stylesheet" href="AnaSayfa.css ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="Shortcut Icon" href="images/logoIcon.ico" type="image/x-icon" >
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="nav" id="nav">
+        <img src="images/logo.jpg" class="nav_logo">
+    </div>
+    <div>
+        <form id="form">
+            <input class="input" id="series" type="button" value="Series" onclick="seriesVisible()" />
+
+            <input class="input" id="film" type="button" value="Movies" onclick="filmVisible()" />
+
+            <select id="selectCat" class="input" onchange="category(value);">
+                <option value="cateory" disabled selected>Category</option>
+                <option value="cmdy"> COMEDY</option>
+                <option value="rmnc"> ROMANCE</option>
+                <option value="hrr"> HORROR</option>
+                <option value="act"> ACTION</option>
+            </select>
+
+            <span id="search"> <i class="fa-solid fa-magnifying-glass"></i> </span>
+
+        </form>
+    </div>
+    <div class="nav2" id="nav2">
+        <a href="Login.html">
+            <img src="images/Cikis.png" class="nav_logo2">
+        </a>
+    </div>
+
+    <!-- BANNER -->
+
+    <div class="banner" id="banner">
+
+        <video id="video" class="banner" poster="images/videoframe.jpg" style="pointer-events: none;">
+            <source src="images/bridgerton.mp4" type="video/mp4" />
+        </video>
+    </div>
+
+    <div class="banner_contents">
+        <h1 class="banner_title">Bridgerton</h1>
+        <div class="banner_buttons">
+            <button class="banner_button" id="btnPlayPause" accesskey="p" onclick="playPauseVideo()"> Play </button>
+            <button class="banner_button">My List</button>
+        </div>
+        <div class="banner_desc">
+            The eight close-knit siblings of the Bridgerton family look for love and happiness in London high society. Inspired by Julia Quinn's bestselling novels.
+        </div>
+    </div>
+
+    <!-- Button -->
+
+    <div id="divSeries">
+        <!-- ACEFLIX ORIGINALS-->
+        <div class="row" id="originals">
+            <h2 class="first">ACEFLIX ORIGINALS</h2>
+            <div class="row_posters">
+                <a href="AnneMovie.html"><img id="img1" src="images/large-movie1.jpg" alt="" class="row_poster row_posterLarge"></a>
+                <img src="images/large-movie2.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-movie3.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-movie4.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-movie5.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-movie6.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-movie7.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-movie8.jpg" alt="" class="row_poster row_posterLarge">
+                <a href="AnneMovie.html"><img id="img1" src="images/large-movie1.jpg" alt="" class="row_poster row_posterLarge"></a>
+                <img src="images/large-movie2.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-movie3.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-movie4.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-movie5.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-movie6.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-movie7.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-movie8.jpg" alt="" class="row_poster row_posterLarge">
+            </div>
+        </div>
+
+        <!-- TRENDING NOW -->
+
+        <div class="row" id="trend">
+            <h2>TRENDING NOW</h2>
+            <div class="row_posters">
+                <img src="images/small-movie1.jpg" alt="" class="row_poster">
+                <img src="images/small-movie2.jpg" alt="" class="row_poster">
+                <a href="AnneMovie.html">
+                    <img src="images/small-movie3.jpg" alt="" class="row_poster">
+                </a>
+                <img src="images/small-movie4.jpg" alt="" class="row_poster">
+                <img src="images/small-movie5.jpg" alt="" class="row_poster">
+                <img src="images/small-movie6.jpg" alt="" class="row_poster">
+                <img src="images/small-movie7.jpg" alt="" class="row_poster">
+                <img src="images/small-movie8.jpg" alt="" class="row_poster">
+                <img src="images/small-movie1.jpg" alt="" class="row_poster">
+                <img src="images/small-movie2.jpg" alt="" class="row_poster">
+                <a href="AnneMovie.html">
+                    <img src="images/small-movie3.jpg" alt="" class="row_poster">
+                </a>
+                <img src="images/small-movie4.jpg" alt="" class="row_poster">
+                <img src="images/small-movie5.jpg" alt="" class="row_poster">
+                <img src="images/small-movie6.jpg" alt="" class="row_poster">
+                <img src="images/small-movie7.jpg" alt="" class="row_poster">
+                <img src="images/small-movie8.jpg" alt="" class="row_poster">
+            </div>
+        </div>
+
+        <!-- TOP RATED -->
+
+        <div class="row" id="top">
+            <h2>TOP RATED</h2>
+            <div class="row_posters">
+                <img src="images/bridgerton.jpg" alt="" class="row_poster">
+                <img src="images/small-movie6.jpg" alt="" class="row_poster">
+                <img src="images/small-movie7.jpg" alt="" class="row_poster">
+                <img src="images/small-action-movie4.jpg" alt="" class="row_poster">
+                <img src="images/small-comedy-movie7.jpg" alt="" class="row_poster">
+                <img src="images/small-action-movie5.jpg" alt="" class="row_poster">
+                <img src="images/small-comedy-movie5.jpg" alt="" class="row_poster">
+                <img src="images/small-movie4.jpg" alt="" class="row_poster">
+                <img src="images/small-movie1.jpg" alt="" class="row_poster">
+                <img src="images/small-horror-movie5.jpg" alt="" class="row_poster">
+                <img src="images/small-movie8.jpg" alt="" class="row_poster">
+                <img src="images/small-horror-movie6.jpg" alt="" class="row_poster">
+                <img src="images/small-horror-movie7.jpg" alt="" class="row_poster">
+                <a href="AnneMovie.html">
+                    <img src="images/small-movie3.jpg" alt="" class="row_poster">
+                </a>
+                <img src="images/small-action-movie6.jpg" alt="" class="row_poster">
+                <img src="images/small-movie1.jpg" alt="" class="row_poster">
+                <img src="images/small-action-movie4.jpg" alt="" class="row_poster">
+            </div>
+        </div>
+
+        <!-- COMEDY SERIES -->
+
+        <div class="row" id="comedy">
+            <h2>COMEDY SERIES</h2>
+            <div class="row_posters">
+                <img src="images/small-comedy-movie1.jpg" alt="" class="row_poster">
+                <img src="images/small-comedy-movie2.jpg" alt="" class="row_poster">
+                <img src="images/small-comedy-movie3.jpg" alt="" class="row_poster">
+                <img src="images/small-comedy-movie4.jpg" alt="" class="row_poster">
+                <img src="images/small-comedy-movie5.jpg" alt="" class="row_poster">
+                <img src="images/small-comedy-movie7.jpg" alt="" class="row_poster">
+                <img src="images/small-comedy-movie8.jpg" alt="" class="row_poster">
+                <img src="images/small-comedy-movie1.jpg" alt="" class="row_poster">
+                <img src="images/small-comedy-movie2.jpg" alt="" class="row_poster">
+                <img src="images/small-comedy-movie3.jpg" alt="" class="row_poster">
+                <img src="images/small-comedy-movie4.jpg" alt="" class="row_poster">
+                <img src="images/small-comedy-movie5.jpg" alt="" class="row_poster">
+                <img src="images/small-comedy-movie7.jpg" alt="" class="row_poster">
+                <img src="images/small-comedy-movie8.jpg" alt="" class="row_poster">
+            </div>
+        </div>
+
+        <!-- ROMANCE SERIES -->
+
+        <div class="row" id="romance">
+            <h2>ROMANCE SERIES</h2>
+            <div class="row_posters">
+                <img src="images/small-romantic-movie2.jpg" alt="" class="row_poster">
+                <img src="images/small-romantic-movie3.jpg" alt="" class="row_poster">
+                <img src="images/small-romantic-movie4.jpg" alt="" class="row_poster">
+                <img src="images/small-romantic-movie5.jpg" alt="" class="row_poster">
+                <img src="images/small-romantic-movie6.jpg" alt="" class="row_poster">
+                <img src="images/small-romantic-movie1.jpg" alt="" class="row_poster">
+                <img src="images/small-romantic-movie7.jpg" alt="" class="row_poster">
+                <img src="images/small-comedy-movie2.jpg" alt="" class="row_poster">
+                <img src="images/small-romantic-movie2.jpg" alt="" class="row_poster">
+                <img src="images/small-romantic-movie3.jpg" alt="" class="row_poster">
+                <img src="images/small-romantic-movie4.jpg" alt="" class="row_poster">
+                <img src="images/small-romantic-movie5.jpg" alt="" class="row_poster">
+                <img src="images/small-romantic-movie6.jpg" alt="" class="row_poster">
+                <img src="images/small-romantic-movie1.jpg" alt="" class="row_poster">
+                <img src="images/small-romantic-movie7.jpg" alt="" class="row_poster">
+                <img src="images/small-comedy-movie2.jpg" alt="" class="row_poster">
+
+            </div>
+        </div>
+
+        <!-- HORROR SERIES -->
+
+        <div class="row" id="horror">
+            <h2>HORROR SERIES</h2>
+            <div class="row_posters">
+                <img src="images/small-horror-movie1.jpg" alt="" class="row_poster">
+                <img src="images/small-horror-movie2.jpg" alt="" class="row_poster">
+                <img src="images/small-horror-movie3.jpg" alt="" class="row_poster">
+                <img src="images/small-horror-movie4.jpg" alt="" class="row_poster">
+                <img src="images/small-horror-movie5.jpg" alt="" class="row_poster">
+                <img src="images/small-horror-movie6.jpg" alt="" class="row_poster">
+                <img src="images/small-horror-movie7.jpg" alt="" class="row_poster">
+                <img src="images/small-horror-movie8.jpg" alt="" class="row_poster">
+                <img src="images/small-horror-movie1.jpg" alt="" class="row_poster">
+                <img src="images/small-horror-movie2.jpg" alt="" class="row_poster">
+                <img src="images/small-horror-movie3.jpg" alt="" class="row_poster">
+                <img src="images/small-horror-movie4.jpg" alt="" class="row_poster">
+                <img src="images/small-horror-movie5.jpg" alt="" class="row_poster">
+                <img src="images/small-horror-movie6.jpg" alt="" class="row_poster">
+                <img src="images/small-horror-movie7.jpg" alt="" class="row_poster">
+                <img src="images/small-horror-movie8.jpg" alt="" class="row_poster">
+            </div>
+        </div>
+
+        <!-- ACTION SERIES -->
+
+        <div class="row" id="action">
+            <h2>ACTION SERIES</h2>
+            <div class="row_posters">
+                <img src="images/small-action-movie1.jpg" alt="" class="row_poster">
+                <img src="images/small-action-movie2.jpg" alt="" class="row_poster">
+                <img src="images/small-action-movie4.jpg" alt="" class="row_poster">
+                <img src="images/small-action-movie5.jpg" alt="" class="row_poster">
+                <img src="images/small-action-movie3.jpg" alt="" class="row_poster">
+                <img src="images/small-action-movie6.jpg" alt="" class="row_poster">
+                <img src="images/small-action-movie7.jpg" alt="" class="row_poster">
+                <img src="images/small-action-movie1.jpg" alt="" class="row_poster">
+                <img src="images/small-action-movie2.jpg" alt="" class="row_poster">
+                <img src="images/small-action-movie4.jpg" alt="" class="row_poster">
+                <img src="images/small-action-movie5.jpg" alt="" class="row_poster">
+                <img src="images/small-action-movie3.jpg" alt="" class="row_poster">
+                <img src="images/small-action-movie7.jpg" alt="" class="row_poster">
+                <img src="images/small-action-movie6.jpg" alt="" class="row_poster">
+                <img src="images/small-action-movie4.jpg" alt="" class="row_poster">
+                <img src="images/small-action-movie5.jpg" alt="" class="row_poster">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="divFilms">
+        <!-- ACEFLIX ORIGINALS-->
+        <div class="row" id="originals2">
+            <h2 class="first">ACEFLIX ORIGINALS</h2>
+            <div class="row_posters">
+                <a href="ForestGumpFilm.html"><img src="images/large-film1.jpg" alt="" class="row_poster row_posterLarge"></a>
+                <img src="images/large-film2.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-film4.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-film5.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-film3.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-film6.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-film7.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-film2.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-film3.jpg" alt="" class="row_poster row_posterLarge">
+                <img src="images/large-film4.jpg" alt="" class="row_poster row_posterLarge">
+            </div>
+
+            <!-- TRENDING NOW -->
+
+            <div class="row" id="trend2">
+                <h2>TRENDING NOW</h2>
+                <div class="row_posters">
+                    <img src="images/small-horror-film1.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film5.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film7.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film4.jpg" alt="" class="row_poster">
+                    <img src="images/small-horror-film2.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film1.jpg" alt="" class="row_poster">
+                    <img src="images/small-comedy-film4.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film2.jpg" alt="" class="row_poster">
+                </div>
+            </div>
+
+            <!-- TOP RATED -->
+
+            <div class="row" id="top2">
+                <h2>TOP RATED</h2>
+                <div class="row_posters">
+                    <img src="images/small-comedy-film2.jpg" alt="" class="row_poster">
+                    <img src="images/small-horror-film5.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film3.jpg" alt="" class="row_poster">
+                    <img src="images/small-horror-action.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film6.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film4.jpg" alt="" class="row_poster">
+                    <img src="images/small-horror-film1.jpg" alt="" class="row_poster">
+                    <img src="images/small-horror-film2.jpg" alt="" class="row_poster">
+                    <img src="images/small-comedy-film3.jpg" alt="" class="row_poster">
+                    <img src="images/small-comedy-film4.jpg" alt="" class="row_poster">
+                </div>
+            </div>
+
+            <!-- COMEDY MOVIES -->
+
+            <div class="row" id="comedy2">
+                <h2>COMEDY MOVIES</h2>
+                <div class="row_posters">
+                    <img src="images/small-comedy-film1.jpg" alt="" class="row_poster">
+                    <img src="images/small-comedy-film2.jpg" alt="" class="row_poster">
+                    <img src="images/small-comedy-film3.jpg" alt="" class="row_poster">
+                    <img src="images/small-comedy-film4.jpg" alt="" class="row_poster">
+                    <img src="images/small-comedy-film5.jpg" alt="" class="row_poster">
+                    <img src="images/small-comedy-film6.jpg" alt="" class="row_poster">
+                    <img src="images/small-comedy-romance-film.jpg" alt="" class="row_poster">
+                    <img src="images/small-comedy-film1.jpg" alt="" class="row_poster">
+                    <img src="images/small-comedy-film2.jpg" alt="" class="row_poster">
+                    <img src="images/small-comedy-film3.jpg" alt="" class="row_poster">
+                    <img src="images/small-comedy-film4.jpg" alt="" class="row_poster">
+                    <img src="images/small-comedy-romance-film.jpg" alt="" class="row_poster">
+                    <img src="images/small-comedy-film5.jpg" alt="" class="row_poster">
+                    <img src="images/small-comedy-film6.jpg" alt="" class="row_poster">
+
+                </div>
+            </div>
+
+            <!-- HORROR MOVIES -->
+
+            <div class="row" id="horror2">
+                <h2>HORROR MOVIES</h2>
+                <div class="row_posters">
+                    <img src="images/small-horror-film1.jpg" alt="" class="row_poster">
+                    <img src="images/small-horror-film2.jpg" alt="" class="row_poster">
+                    <img src="images/small-horror-action.jpg" alt="" class="row_poster">
+                    <img src="images/small-horror-film3.jpg" alt="" class="row_poster">
+                    <img src="images/small-horror-film4.jpg" alt="" class="row_poster">
+                    <img src="images/small-horror-film5.jpg" alt="" class="row_poster">
+                    <img src="images/small-horror-film6.jpg" alt="" class="row_poster">
+                    <img src="images/small-horror-film1.jpg" alt="" class="row_poster">
+                    <img src="images/small-horror-film2.jpg" alt="" class="row_poster">
+                    <img src="images/small-horror-action.jpg" alt="" class="row_poster">
+                    <img src="images/small-horror-film3.jpg" alt="" class="row_poster">
+                    <img src="images/small-horror-film4.jpg" alt="" class="row_poster">
+                    <img src="images/small-horror-film5.jpg" alt="" class="row_poster">
+                    <img src="images/small-horror-film6.jpg" alt="" class="row_poster">
+                </div>
+            </div>
+
+            <!-- ACTION MOVIES -->
+
+            <div class="row" id="action2">
+                <h2>ACTION MOVIES</h2>
+                <div class="row_posters">
+                    <img src="images/small-action-film1.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film2.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film4.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film5.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film3.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film6.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film7.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film1.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film2.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film4.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film5.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film3.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film6.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film7.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film1.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film2.jpg" alt="" class="row_poster">
+                    <img src="images/small-action-film4.jpg" alt="" class="row_poster">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        player = document.getElementById("video");
+        btnPlayPause = document.getElementById("btnPlayPause");
+
+        player.addEventListener("play", function () {
+            changeButtonType(btnPlayPause, "Pause");
+        }, false);
+
+        player.addEventListener("pause", function () {
+            changeButtonType(btnPlayPause, "Play");
+        }, false);
+
+        function playPauseVideo() {
+            if (
+                player.paused || player.ended) {
+                changeButtonType(btnPlayPause, "Pause");
+                player.play();
+            } else {
+                changeButtonType(btnPlayPause, "Play");
+                player.pause();
+            }
+        }
+
+        function changeButtonType(btn, value) {
+            btn.title = value;
+            btn.innerHTML = value;
+        }
+
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY >= 100) {
+                nav.classList.add('nav_black');
+            } else {
+                nav.classList.remove('nav_black')
+            }
+        })
+
+        function filmVisible() {
+            document.getElementById("divSeries").style.visibility = 'hidden';
+            document.getElementById("divSeries").style.float = "end";
+            document.getElementById("originals").style.visibility = "hidden";
+            document.getElementById("top").style.visibility = "hidden";
+            document.getElementById("trend").style.visibility = "hidden";
+            document.getElementById("romance").style.visibility = "hidden";
+            document.getElementById("horror").style.visibility = "hidden";
+            document.getElementById("comedy").style.visibility = "hidden";
+            document.getElementById("action").style.visibility = "hidden";
+
+            document.getElementById("originals2").style.visibility = "visible";
+            document.getElementById("top2").style.visibility = "visible";
+            document.getElementById("trend2").style.visibility = "visible";
+            document.getElementById("horror2").style.visibility = "visible";
+            document.getElementById("comedy2").style.visibility = "visible";
+            document.getElementById("action2").style.visibility = "visible";
+
+            document.getElementById("originals2").style.position = "static";
+            document.getElementById("top2").style.position = "static";
+            document.getElementById("trend2").style.position = "static";
+            document.getElementById("horror2").style.position = "static";
+            document.getElementById("comedy2").style.position = "static";
+            document.getElementById("action2").style.position = "static";
+
+            document.getElementById("divFilms").style.visibility = 'visible';
+        }
+
+        function seriesVisible() {
+            setInterval(function () {
+                window.location.reload(false);
+            }, 0);
+
+        }
+
+        function category($value) {
+            if ($value == "cmdy") {
+                document.getElementById("originals").style.visibility = "hidden";
+                document.getElementById("top").style.visibility = "hidden";
+                document.getElementById("trend").style.visibility = "hidden";
+                document.getElementById("romance").style.visibility = "hidden";
+                document.getElementById("horror").style.visibility = "hidden";
+                document.getElementById("action").style.visibility = "hidden";
+
+                document.getElementById("originals2").style.visibility = "hidden";
+                document.getElementById("top2").style.visibility = "hidden";
+                document.getElementById("trend2").style.visibility = "hidden";
+                document.getElementById("horror2").style.visibility = "hidden";
+                document.getElementById("action2").style.visibility = "hidden";
+
+                //document.getElementById("divFilms").style.visibility = "hidden";
+
+                document.getElementById("comedy").style.visibility = "visible";
+                document.getElementById("comedy").style.position = "absolute";
+                document.getElementById("comedy").style.top = "60px";
+
+                document.getElementById("comedy2").style.visibility = "visible";
+                document.getElementById("comedy2").style.position = "absolute";
+                document.getElementById("comedy2").style.top = "300px";
+
+            }
+            else if ($value == "rmnc") {
+                document.getElementById("originals").style.visibility = "hidden";
+                document.getElementById("top").style.visibility = "hidden";
+                document.getElementById("trend").style.visibility = "hidden";
+                document.getElementById("comedy").style.visibility = "hidden";
+                document.getElementById("horror").style.visibility = "hidden";
+                document.getElementById("action").style.visibility = "hidden";
+
+                document.getElementById("originals2").style.visibility = "hidden";
+                document.getElementById("top2").style.visibility = "hidden";
+                document.getElementById("trend2").style.visibility = "hidden";
+                document.getElementById("comedy2").style.visibility = "hidden";
+                document.getElementById("horror2").style.visibility = "hidden";
+                document.getElementById("action2").style.visibility = "hidden";
+                //document.getElementById("divFilms").style.visibility = "hidden";
+
+                document.getElementById("romance").style.visibility = "visible";
+                document.getElementById("romance").style.position = "Absolute";
+                document.getElementById("romance").style.top = "60px";
+            }
+            else if ($value == "hrr") {
+                document.getElementById("originals").style.visibility = "hidden";
+                document.getElementById("top").style.visibility = "hidden";
+                document.getElementById("trend").style.visibility = "hidden";
+                document.getElementById("romance").style.visibility = "hidden";
+                document.getElementById("comedy").style.visibility = "hidden";
+                document.getElementById("action").style.visibility = "hidden";
+
+                document.getElementById("originals2").style.visibility = "hidden";
+                document.getElementById("top2").style.visibility = "hidden";
+                document.getElementById("trend2").style.visibility = "hidden";
+                document.getElementById("comedy2").style.visibility = "hidden";
+                document.getElementById("action2").style.visibility = "hidden";
+                //document.getElementById("divFilms").style.visibility = "hidden";
+
+                document.getElementById("horror").style.visibility = "visible";
+                document.getElementById("horror").style.position = "absolute";
+                document.getElementById("horror").style.top = "60px";
+
+                document.getElementById("horror2").style.visibility = "visible";
+                document.getElementById("horror2").style.position = "absolute";
+                document.getElementById("horror2").style.top = "300px";
+            }
+
+            else if ($value == "act") {
+                document.getElementById("originals").style.visibility = "hidden";
+                document.getElementById("top").style.visibility = "hidden";
+                document.getElementById("trend").style.visibility = "hidden";
+                document.getElementById("romance").style.visibility = "hidden";
+                document.getElementById("horror").style.visibility = "hidden";
+                document.getElementById("comedy").style.visibility = "hidden";
+
+                document.getElementById("originals2").style.visibility = "hidden";
+                document.getElementById("top2").style.visibility = "hidden";
+                document.getElementById("trend2").style.visibility = "hidden";
+                document.getElementById("horror2").style.visibility = "hidden";
+                document.getElementById("comedy2").style.visibility = "hidden";
+                //document.getElementById("divFilms").style.visibility = "hidden";
+
+                document.getElementById("action").style.visibility = "visible";
+                document.getElementById("action").style.position = "absolute";
+                document.getElementById("action").style.top = "60px";
+
+                document.getElementById("action2").style.visibility = "visible";
+                document.getElementById("action2").style.position = "absolute";
+                document.getElementById("action2").style.top = "300px";
+            }
+            }
+        
+    </script>
+
+</body>
+</html>
